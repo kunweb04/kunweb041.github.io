@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中文歌曲</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            box-sizing: border-box;
+        }
+        h1 {
+            text-align: center;
+        }
+        .song-list {
+            list-style: none;
+            padding: 0;
+        }
+        .song-list li {
+            margin: 10px 0;
+            text-align: center;
+        }
+        .song-list button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .song-list button:hover {
+            background-color: #0056b3;
+        }
+        .link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>中文歌曲</h1>
+        <ul class="song-list">
+            <li>
+                <button onclick="playAudio('song1.mp3')">歌曲1 - 歌手1</button>
+            </li>
+            <li>
+                <button onclick="playAudio('song2.mp3')">歌曲2 - 歌手2</button>
+            </li>
+            <li>
+                <button onclick="playAudio('song3.mp3')">歌曲3 - 歌手3</button>
+            </li>
+            <!-- 更多歌曲 -->
+        </ul>
+        <div class="link">
+            <p><a href="m0.html">返回选择页面</a></p>
+        </div>
+    </div>
+    <audio id="audio-player" controls style="display: none;"></audio>
+    <script>
+        function playAudio(file) {
+            var audioPlayer = document.getElementById('audio-player');
+            audioPlayer.src = file;
+            audioPlayer.play();
+        }
+    </script>
+</body>
+</html>
